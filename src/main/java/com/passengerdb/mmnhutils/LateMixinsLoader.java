@@ -1,6 +1,6 @@
 package com.passengerdb.mmnhutils;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -19,10 +19,15 @@ public class LateMixinsLoader implements ILateMixinLoader {
     @Override
     public List<String> getMixins(Set<String> loadedMods) {
 
-        if (loadedMods.contains("DragonAPI")) ModCheck.dapiLoad();
-        if (loadedMods.contains("ChromatiCraft")) ModCheck.ccLoad();
+        List<String> mixins = new ArrayList<>();
 
-        return Collections.emptyList();
+        if (loadedMods.contains("DragonAPI")) ModCheck.dapiLoad();
+        if (loadedMods.contains("ChromatiCraft")) {
+            ModCheck.ccLoad();
+            mixins.add("chromaticraft.StructurePasswordCheckPasswordMixin");
+        }
+
+        return mixins;
     }
 
 }

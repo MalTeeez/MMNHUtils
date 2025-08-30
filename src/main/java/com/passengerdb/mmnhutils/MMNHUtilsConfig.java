@@ -18,8 +18,16 @@ public class MMNHUtilsConfig {
     @Config.DefaultStringList(value = { "net.minecraft.entity.boss.IBossDisplayData" })
     private static String[] spawnerReprogrammerBlacklistEntityParent;
 
+    @Config.Comment("Whether or not to enable proxima structure bypass key calculation fix")
+    @Config.DefaultBoolean(value = true)
+    private static boolean enableStructureBypassKeyCalculationFix;
+
     public static List<String> getSpawnerReprogrammerBlacklistEntityParent() {
         return Collections.unmodifiableList(Arrays.asList(spawnerReprogrammerBlacklistEntityParent));
+    }
+
+    public static boolean isEnableStructureBypassKeyCalculationFix() {
+        return enableStructureBypassKeyCalculationFix;
     }
 
 }
