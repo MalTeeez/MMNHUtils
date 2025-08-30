@@ -1,18 +1,17 @@
-package com.passengerdb.dragonfix;
+package com.passengerdb.mmnhutils;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import com.gtnewhorizon.gtnhmixins.ILateMixinLoader;
+import com.passengerdb.dragonfix.Tags;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = DragonFix.MODID, version = Tags.VERSION, name = "DragonFix", acceptedMinecraftVersions = "[1.7.10]", dependencies = "required-after:gtnhlib@[0.6.33,);")
-public class DragonFix {
+@Mod(modid = MMNHUtils.MODID, version = Tags.VERSION, name = "MMNHUtils", acceptedMinecraftVersions = "[1.7.10]", dependencies = "required-after:gtnhlib@[0.6.33,);")
+public class MMNHUtils {
 
-    public static final String MODID = "dragonfix";
+    public static final String MODID = "mmnhutils";
     public static final Logger LOG = LogManager.getLogger(MODID);
 
     @Mod.EventHandler

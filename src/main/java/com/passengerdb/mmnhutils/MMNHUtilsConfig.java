@@ -1,4 +1,4 @@
-package com.passengerdb.dragonfix;
+package com.passengerdb.mmnhutils;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -7,9 +7,9 @@ import java.util.List;
 import com.gtnewhorizon.gtnhlib.config.Config;
 
 @Config(modid = DragonFix.MODID)
-public class DragonFixConfig {
+public class MMNHUtilsConfig {
 
-	private DragonFixConfig() {
+	private MMNHUtilsConfig() {
 	}
 
 	@Config.Comment(value = { "Extra blacklist entity parent full class names for ChromatiCraft spawner reprogrammer",

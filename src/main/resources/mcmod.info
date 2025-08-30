@@ -3,10 +3,10 @@
 	"modList": [{
 		"modid": "${modId}",
 		"name": "${modName}",
-		"description": "A simple minecraft mod to fix some issues about Reika's mods.",
+		"description": "A simple minecraft mod to fix some issues in MMNH modpack.",
 		"version": "${modVersion}",
 		"mcversion": "${minecraftVersion}",
-		"url": "https://github.com/XenonDB/DragonFix",
+		"url": "https://github.com/XenonDB/MMNHUtils",
 		"updateUrl": "",
 		"authorList": ["XenonDB"],
 		"credits": "",

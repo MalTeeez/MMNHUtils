@@ -1,6 +1,6 @@
-package com.passengerdb.dragonfix.fixes.chromaticraft;
+package com.passengerdb.mmnhutils.fixes.chromaticraft;
 
-import com.passengerdb.dragonfix.DragonFix;
+import com.passengerdb.mmnhutils.DragonFix;
 
 public class SpawnerReprogrammerExtraBlacklist {
 	
