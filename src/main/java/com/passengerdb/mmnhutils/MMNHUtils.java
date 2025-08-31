@@ -19,7 +19,8 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
     version = Tags.VERSION,
     name = "MMNHUtils",
     acceptedMinecraftVersions = "[1.7.10]",
-    dependencies = "required-after:gtnhlib@[0.6.33,);")
+    dependencies = "required-after:gtnhlib@[0.6.33,);",
+    acceptableRemoteVersions = "*")
 public class MMNHUtils {
 
     public static final String MODID = "mmnhutils";
