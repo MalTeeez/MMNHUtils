@@ -21,7 +21,10 @@ public class LateMixinsLoader implements ILateMixinLoader {
 
         List<String> mixins = new ArrayList<>();
 
-        if (loadedMods.contains("DragonAPI")) ModCheck.dapiLoad();
+        if (loadedMods.contains("DragonAPI")) {
+            ModCheck.dapiLoad();
+            mixins.add("dragonapi.DamageArmorItemMixin");
+        }
         if (loadedMods.contains("ChromatiCraft")) {
             ModCheck.ccLoad();
             mixins.add("chromaticraft.StructurePasswordCheckPasswordMixin");

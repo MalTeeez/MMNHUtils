@@ -22,12 +22,20 @@ public class MMNHUtilsConfig {
     @Config.DefaultBoolean(value = true)
     private static boolean enableStructureBypassKeyCalculationFix;
 
+    @Config.Comment("Whether or not to enable fixing Reika's damage armor method, prevent it to destroy some unbreakable armors")
+    @Config.DefaultBoolean(value = true)
+    private static boolean enableDamageArmorItemFix;
+
     public static List<String> getSpawnerReprogrammerBlacklistEntityParent() {
         return Collections.unmodifiableList(Arrays.asList(spawnerReprogrammerBlacklistEntityParent));
     }
 
     public static boolean isEnableStructureBypassKeyCalculationFix() {
         return enableStructureBypassKeyCalculationFix;
+    }
+
+    public static boolean isEnableDamageArmorItemFix() {
+        return enableDamageArmorItemFix;
     }
 
 }
