@@ -1,4 +1,4 @@
-package com.passengerdb.mmnhutils.fixes;
+package com.passengerdb.mmnhutils;
 
 public class ModCheck {
 
@@ -6,6 +6,7 @@ public class ModCheck {
 
     private static boolean chromaticraft = false;
     private static boolean dragonapi = false;
+    private static boolean manametalmod = false;
 
     public static void ccLoad() {
         chromaticraft = true;
@@ -21,6 +22,14 @@ public class ModCheck {
 
     public static boolean isDapiLoaded() {
         return dragonapi;
+    }
+
+    public static void manametalmodLoad() {
+        manametalmod = true;
+    }
+
+    public static boolean isManametalmodLoaded() {
+        return manametalmod;
     }
 
 }

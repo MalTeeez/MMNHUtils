@@ -6,7 +6,6 @@ import java.util.Set;
 
 import com.gtnewhorizon.gtnhmixins.ILateMixinLoader;
 import com.gtnewhorizon.gtnhmixins.LateMixin;
-import com.passengerdb.mmnhutils.fixes.ModCheck;
 
 @LateMixin
 public class LateMixinsLoader implements ILateMixinLoader {
@@ -28,6 +27,9 @@ public class LateMixinsLoader implements ILateMixinLoader {
         if (loadedMods.contains("ChromatiCraft")) {
             ModCheck.ccLoad();
             mixins.add("chromaticraft.StructurePasswordCheckPasswordMixin");
+        }
+        if (loadedMods.contains("manametalmod")) {
+            ModCheck.manametalmodLoad();
         }
 
         return mixins;

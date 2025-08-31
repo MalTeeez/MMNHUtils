@@ -38,4 +38,5 @@ dependencies {
 	
 	devOnlyNonPublishable(rfg.deobf("curse.maven:dragonapi-235591:4722480"))
 	devOnlyNonPublishable(rfg.deobf("curse.maven:chromaticraft-235590:4721192"))
+	devOnlyNonPublishable(rfg.deobf("curse.maven:manametalmod-531708:6943759"))
 }

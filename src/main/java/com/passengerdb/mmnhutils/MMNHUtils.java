@@ -1,11 +1,13 @@
 package com.passengerdb.mmnhutils;
 
+import net.minecraftforge.common.MinecraftForge;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.gtnewhorizon.gtnhlib.config.ConfigException;
 import com.gtnewhorizon.gtnhlib.config.ConfigurationManager;
-import com.passengerdb.mmnhutils.fixes.ModCheck;
+import com.passengerdb.mmnhutils.events.manametalmod.GenericM3EventHandler;
 import com.passengerdb.mmnhutils.fixes.chromaticraft.SpawnerReprogrammerExtraBlacklist;
 
 import cpw.mods.fml.common.Mod;
@@ -38,6 +40,9 @@ public class MMNHUtils {
     public void postInit(FMLPostInitializationEvent event) {
         if (ModCheck.isCcLoaded()) {
             SpawnerReprogrammerExtraBlacklist.init();
+        }
+        if (ModCheck.isManametalmodLoaded()) {
+            MinecraftForge.EVENT_BUS.register(GenericM3EventHandler.INSTANCE);
         }
     }
 

@@ -26,6 +26,10 @@ public class MMNHUtilsConfig {
     @Config.DefaultBoolean(value = true)
     private static boolean enableDamageArmorItemFix;
 
+    @Config.Comment("Whether or not to disable M3 dungeon mob appears in non dungeon dimensions")
+    @Config.DefaultBoolean(value = true)
+    private static boolean disableM3DungeonMobAppearsInNonDungeonDimension;
+
     public static List<String> getSpawnerReprogrammerBlacklistEntityParent() {
         return Collections.unmodifiableList(Arrays.asList(spawnerReprogrammerBlacklistEntityParent));
     }
@@ -36,6 +40,10 @@ public class MMNHUtilsConfig {
 
     public static boolean isEnableDamageArmorItemFix() {
         return enableDamageArmorItemFix;
+    }
+
+    public static boolean isDisableM3DungeonMobAppearsInNonDungeonDimension() {
+        return disableM3DungeonMobAppearsInNonDungeonDimension;
     }
 
 }
