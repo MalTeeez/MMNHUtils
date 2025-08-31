@@ -30,6 +30,14 @@ public class MMNHUtilsConfig {
     @Config.DefaultBoolean(value = true)
     private static boolean disableM3DungeonMobAppearsInNonDungeonDimension;
 
+    @Config.Comment("Disable ChromatiCraft's item collector collect item from EntityJoinWorldEvent. May cause collector to work slower but can prevent item duplication bug.")
+    @Config.DefaultBoolean(value = true)
+    private static boolean disableItemCollectorCollectItemFromEvent;
+
+    @Config.Comment("Disable ChromatiCraft's item mover interact with ISidedInventory container.")
+    @Config.DefaultBoolean(value = true)
+    private static boolean disableItemMoverInteractWithISidedInventory;
+
     public static List<String> getSpawnerReprogrammerBlacklistEntityParent() {
         return Collections.unmodifiableList(Arrays.asList(spawnerReprogrammerBlacklistEntityParent));
     }
@@ -44,6 +52,14 @@ public class MMNHUtilsConfig {
 
     public static boolean isDisableM3DungeonMobAppearsInNonDungeonDimension() {
         return disableM3DungeonMobAppearsInNonDungeonDimension;
+    }
+
+    public static boolean isDisableItemCollectorCollectItemFromEvent() {
+        return disableItemCollectorCollectItemFromEvent;
+    }
+
+    public static boolean isDisableItemMoverInteractWithISidedInventory() {
+        return disableItemMoverInteractWithISidedInventory;
     }
 
 }

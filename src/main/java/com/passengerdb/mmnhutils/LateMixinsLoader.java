@@ -27,6 +27,8 @@ public class LateMixinsLoader implements ILateMixinLoader {
         if (loadedMods.contains("ChromatiCraft")) {
             ModCheck.ccLoad();
             mixins.add("chromaticraft.StructurePasswordCheckPasswordMixin");
+            mixins.add("chromaticraft.TileEntityItemCollectorEventMixin");
+            mixins.add("chromaticraft.ItemBulkMoverMixin");
         }
         if (loadedMods.contains("manametalmod")) {
             ModCheck.manametalmodLoad();
