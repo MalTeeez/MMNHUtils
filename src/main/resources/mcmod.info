@@ -10,7 +10,7 @@
 		"updateUrl": "",
 		"authorList": ["XenonDB"],
 		"credits": "",
-		"logoFile": "",
+		"logoFile": "assets/mmnhutils/logo.png",
 		"screenshots": [],
 		"parent": "",
 		"requiredMods": [],
