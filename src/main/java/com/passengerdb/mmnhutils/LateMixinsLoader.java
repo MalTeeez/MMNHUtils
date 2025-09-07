@@ -30,6 +30,7 @@ public class LateMixinsLoader implements ILateMixinLoader {
             mixins.add("chromaticraft.TileEntityItemCollectorEventMixin");
             mixins.add("chromaticraft.ItemBulkMoverMixin");
             mixins.add("chromaticraft.TileEntitySpawnerReprogrammerMixin");
+            mixins.add("chromaticraft.ShiftMazeGeneratorMixin");
         }
         if (loadedMods.contains("manametalmod")) {
             ModCheck.manametalmodLoad();

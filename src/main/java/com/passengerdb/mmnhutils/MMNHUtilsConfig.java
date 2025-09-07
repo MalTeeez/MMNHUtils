@@ -38,6 +38,10 @@ public class MMNHUtilsConfig {
     @Config.DefaultBoolean(value = true)
     private static boolean disableItemMoverInteractWithISidedInventory;
 
+    @Config.Comment("Whether or not to enable fix of server crash when using bypass panel of shifting maze")
+    @Config.DefaultBoolean(value = true)
+    private static boolean enableShiftMazeBypassCrashFix;
+
     public static List<String> getSpawnerReprogrammerBlacklistEntityParent() {
         return Collections.unmodifiableList(Arrays.asList(spawnerReprogrammerBlacklistEntityParent));
     }
@@ -60,6 +64,10 @@ public class MMNHUtilsConfig {
 
     public static boolean isDisableItemMoverInteractWithISidedInventory() {
         return disableItemMoverInteractWithISidedInventory;
+    }
+
+    public static boolean isEnableShiftMazeBypassCrashFix() {
+        return enableShiftMazeBypassCrashFix;
     }
 
 }
