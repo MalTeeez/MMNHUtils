@@ -35,6 +35,9 @@ public class LateMixinsLoader implements ILateMixinLoader {
         if (loadedMods.contains("manametalmod")) {
             ModCheck.manametalmodLoad();
         }
+        if (loadedMods.contains("MineTweaker3")) {
+            ModCheck.minetweaker3Load();
+        }
 
         return mixins;
     }

@@ -9,10 +9,12 @@ import com.gtnewhorizon.gtnhlib.config.ConfigException;
 import com.gtnewhorizon.gtnhlib.config.ConfigurationManager;
 import com.passengerdb.mmnhutils.events.manametalmod.GenericM3EventHandler;
 import com.passengerdb.mmnhutils.fixes.chromaticraft.SpawnerReprogrammerExtraBlacklist;
+import com.passengerdb.mmnhutils.fixes.minetweaker3.MinetweakerUtils;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.FMLServerStartedEvent;
 
 @Mod(
     modid = MMNHUtils.MODID,
@@ -44,6 +46,13 @@ public class MMNHUtils {
         }
         if (ModCheck.isManametalmodLoaded()) {
             MinecraftForge.EVENT_BUS.register(GenericM3EventHandler.INSTANCE);
+        }
+    }
+
+    @Mod.EventHandler
+    public void serverStarted(FMLServerStartedEvent evt) {
+        if (ModCheck.isMinetweaker3Loaded() && MMNHUtilsConfig.isTryReloadMTScriptOnServerStarted()) {
+            MinetweakerUtils.reloadMTRecipe(3);
         }
     }
 

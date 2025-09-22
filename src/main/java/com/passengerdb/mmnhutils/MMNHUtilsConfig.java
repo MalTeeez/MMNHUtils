@@ -42,6 +42,12 @@ public class MMNHUtilsConfig {
     @Config.DefaultBoolean(value = true)
     private static boolean enableShiftMazeBypassCrashFix;
 
+    @Config.Comment(
+        value = { "Whether or not to try to reload minetweaker script (at most 3 times) on server started",
+            "This is used to try to fix hashing issue in Thermal Expansion recipes" })
+    @Config.DefaultBoolean(value = true)
+    private static boolean tryReloadMTScriptOnServerStarted;
+
     public static List<String> getSpawnerReprogrammerBlacklistEntityParent() {
         return Collections.unmodifiableList(Arrays.asList(spawnerReprogrammerBlacklistEntityParent));
     }
@@ -68,6 +74,10 @@ public class MMNHUtilsConfig {
 
     public static boolean isEnableShiftMazeBypassCrashFix() {
         return enableShiftMazeBypassCrashFix;
+    }
+
+    public static boolean isTryReloadMTScriptOnServerStarted() {
+        return tryReloadMTScriptOnServerStarted;
     }
 
 }
