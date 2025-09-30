@@ -8,6 +8,7 @@ public class ModCheck {
     private static boolean dragonapi = false;
     private static boolean manametalmod = false;
     private static boolean minetweaker3 = false;
+    private static boolean matteroverdrive = false;
 
     public static void ccLoad() {
         chromaticraft = true;
@@ -39,6 +40,14 @@ public class ModCheck {
 
     public static boolean isMinetweaker3Loaded() {
         return minetweaker3;
+    }
+
+    public static void matteroverdriveLoad() {
+        matteroverdrive = true;
+    }
+
+    public static boolean isMatteroverdriveLoaded() {
+        return matteroverdrive;
     }
 
 }

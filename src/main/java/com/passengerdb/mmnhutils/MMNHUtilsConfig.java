@@ -48,6 +48,10 @@ public class MMNHUtilsConfig {
     @Config.DefaultBoolean(value = true)
     private static boolean tryReloadMTScriptOnServerStarted;
 
+    @Config.Comment("Whether or not to enable fix matter override android's name will grow infinity during loading and saving name")
+    @Config.DefaultBoolean(value = true)
+    private static boolean enableMOAndroidNameFix;
+
     public static List<String> getSpawnerReprogrammerBlacklistEntityParent() {
         return Collections.unmodifiableList(Arrays.asList(spawnerReprogrammerBlacklistEntityParent));
     }
@@ -78,6 +82,10 @@ public class MMNHUtilsConfig {
 
     public static boolean isTryReloadMTScriptOnServerStarted() {
         return tryReloadMTScriptOnServerStarted;
+    }
+
+    public static boolean isEnableMOAndroidNameFix() {
+        return enableMOAndroidNameFix;
     }
 
 }

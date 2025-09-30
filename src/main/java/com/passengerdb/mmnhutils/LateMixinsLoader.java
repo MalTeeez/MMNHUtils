@@ -38,6 +38,10 @@ public class LateMixinsLoader implements ILateMixinLoader {
         if (loadedMods.contains("MineTweaker3")) {
             ModCheck.minetweaker3Load();
         }
+        if (loadedMods.contains("mo")) {
+            ModCheck.matteroverdriveLoad();
+            mixins.add("matteroverdrive.EntityRougeAndroidMobMixin");
+        }
 
         return mixins;
     }

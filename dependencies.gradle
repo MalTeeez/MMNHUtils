@@ -40,4 +40,5 @@ dependencies {
 	devOnlyNonPublishable(rfg.deobf("curse.maven:chromaticraft-235590:4721192"))
 	devOnlyNonPublishable(rfg.deobf("curse.maven:manametalmod-531708:6943759"))
 	devOnlyNonPublishable(rfg.deobf("curse.maven:crafttweaker-239197:2838720"))
+	devOnlyNonPublishable(rfg.deobf("curse.maven:matteroverdrive-229694:2331162"))
 }
