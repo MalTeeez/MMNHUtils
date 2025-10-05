@@ -30,9 +30,9 @@ public class MMNHUtilsConfig {
     @Config.DefaultBoolean(value = true)
     private static boolean disableM3DungeonMobAppearsInNonDungeonDimension;
 
-    @Config.Comment("Disable ChromatiCraft's item collector collect item from EntityJoinWorldEvent. May cause collector to work slower but can prevent item duplication bug.")
+    @Config.Comment("Change ChromatiCraft item collector's behavior of collecting item from EntityJoinWorldEvent. Set the item to dead and set stack size to 0 instead of cancel event.")
     @Config.DefaultBoolean(value = true)
-    private static boolean disableItemCollectorCollectItemFromEvent;
+    private static boolean changeItemCollectorCollectItemFromEventBehavior;
 
     @Config.Comment("Disable ChromatiCraft's item mover interact with ISidedInventory container.")
     @Config.DefaultBoolean(value = true)
@@ -68,8 +68,8 @@ public class MMNHUtilsConfig {
         return disableM3DungeonMobAppearsInNonDungeonDimension;
     }
 
-    public static boolean isDisableItemCollectorCollectItemFromEvent() {
-        return disableItemCollectorCollectItemFromEvent;
+    public static boolean isChangeItemCollectorCollectItemFromEventBehavior() {
+        return changeItemCollectorCollectItemFromEventBehavior;
     }
 
     public static boolean isDisableItemMoverInteractWithISidedInventory() {
