@@ -11,7 +11,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import com.passengerdb.mmnhutils.GenericUtils;
-import com.passengerdb.mmnhutils.MMNHUtilsConfig;
 
 import matteroverdrive.entity.monster.EntityRougeAndroidMob;
 
@@ -24,8 +23,6 @@ public abstract class EntityRougeAndroidMobMixin extends EntityMob {
 
     @Inject(method = "getCustomNameTag", at = @At("HEAD"), cancellable = true)
     private void getCustomNameTag(CallbackInfoReturnable<String> cir) {
-
-        if (!MMNHUtilsConfig.isEnableMOAndroidNameFix()) return;
 
         EnumChatFormatting color = this.getNameColor();
         String oldName = GenericUtils.getTextWithoutFormattingCodes(this.dataWatcher.getWatchableObjectString(10));

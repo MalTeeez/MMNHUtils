@@ -11,8 +11,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import com.passengerdb.mmnhutils.MMNHUtilsConfig;
-
 import Reika.ChromatiCraft.Block.Dimension.Structure.ShiftMaze.BlockShiftLock.Passability;
 import Reika.ChromatiCraft.World.Dimension.Structure.ShiftMazeGenerator;
 import Reika.DragonAPI.Instantiable.Data.Immutable.Coordinate;
@@ -28,12 +26,9 @@ public class ShiftMazeGeneratorMixin {
         at = @At(value = "FIELD", target = "toggleDoors:Ljava/util/List;", opcode = Opcodes.GETFIELD),
         cancellable = true)
     private void openStructure(World w, CallbackInfo c) {
-        if (!MMNHUtilsConfig.isEnableShiftMazeBypassCrashFix()) return;
-
         for (Coordinate coor : this.toggleDoors) {
             coor.setBlockMetadata(w, Passability.OPEN.ordinal());
         }
-
         c.cancel();
     }
 

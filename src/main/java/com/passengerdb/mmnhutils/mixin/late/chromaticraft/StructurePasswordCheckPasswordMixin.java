@@ -4,8 +4,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
-import com.passengerdb.mmnhutils.MMNHUtilsConfig;
-
 import Reika.ChromatiCraft.Auxiliary.ElementEncodedNumber;
 import Reika.ChromatiCraft.Block.Dimension.Structure.BlockStructureDataStorage.TileEntityStructurePassword;
 
@@ -19,8 +17,6 @@ public class StructurePasswordCheckPasswordMixin {
             target = "LReika/DragonAPI/Libraries/ReikaPlayerAPI;isReika(Lnet/minecraft/entity/player/EntityPlayer;)Z"),
         name = "pass")
     private ElementEncodedNumber modifyElementEncodedNumber(ElementEncodedNumber orig) {
-
-        if (!MMNHUtilsConfig.isEnableStructureBypassKeyCalculationFix()) return orig;
 
         return new ElementEncodedNumber(orig.originalValue, 8);
 

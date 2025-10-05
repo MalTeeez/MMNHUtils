@@ -4,11 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import com.gtnewhorizon.gtnhlib.config.ConfigurationManager;
 import com.gtnewhorizon.gtnhmixins.ILateMixinLoader;
 import com.gtnewhorizon.gtnhmixins.LateMixin;
 
 @LateMixin
 public class LateMixinsLoader implements ILateMixinLoader {
+
+    static {
+        try {
+            ConfigurationManager.registerConfig(MMNHUtilsConfig.class);
+            MMNHUtils.LOG.info("Config initialized.");
+        } catch (Exception e) {
+            MMNHUtils.LOG.error("Unable to register config. All settings keep default value.", e);
+        }
+    }
 
     @Override
     public String getMixinConfig() {
@@ -21,16 +31,10 @@ public class LateMixinsLoader implements ILateMixinLoader {
         List<String> mixins = new ArrayList<>();
 
         if (loadedMods.contains("DragonAPI")) {
-            ModCheck.dapiLoad();
-            mixins.add("dragonapi.DamageArmorItemMixin");
+            processDAPIMixins(mixins);
         }
         if (loadedMods.contains("ChromatiCraft")) {
-            ModCheck.ccLoad();
-            mixins.add("chromaticraft.StructurePasswordCheckPasswordMixin");
-            mixins.add("chromaticraft.TileEntityItemCollectorEventMixin");
-            mixins.add("chromaticraft.ItemBulkMoverMixin");
-            mixins.add("chromaticraft.TileEntitySpawnerReprogrammerMixin");
-            mixins.add("chromaticraft.ShiftMazeGeneratorMixin");
+            processCCMixins(mixins);
         }
         if (loadedMods.contains("manametalmod")) {
             ModCheck.manametalmodLoad();
@@ -39,11 +43,32 @@ public class LateMixinsLoader implements ILateMixinLoader {
             ModCheck.minetweaker3Load();
         }
         if (loadedMods.contains("mo")) {
-            ModCheck.matteroverdriveLoad();
-            mixins.add("matteroverdrive.EntityRougeAndroidMobMixin");
+            processMOMixins(mixins);
         }
 
         return mixins;
+    }
+
+    private static void processDAPIMixins(List<String> mixins) {
+        ModCheck.dapiLoad();
+        if (MMNHUtilsConfig.isEnableDamageArmorItemFix()) mixins.add("dragonapi.DamageArmorItemMixin");
+    }
+
+    private static void processCCMixins(List<String> mixins) {
+        ModCheck.ccLoad();
+        if (MMNHUtilsConfig.isEnableStructureBypassKeyCalculationFix())
+            mixins.add("chromaticraft.StructurePasswordCheckPasswordMixin");
+        if (MMNHUtilsConfig.isChangeItemCollectorCollectItemFromEventBehavior())
+            mixins.add("chromaticraft.TileEntityItemCollectorEventMixin");
+        if (MMNHUtilsConfig.isDisableItemMoverInteractWithISidedInventory())
+            mixins.add("chromaticraft.ItemBulkMoverMixin");
+        mixins.add("chromaticraft.TileEntitySpawnerReprogrammerMixin");
+        if (MMNHUtilsConfig.isEnableShiftMazeBypassCrashFix()) mixins.add("chromaticraft.ShiftMazeGeneratorMixin");
+    }
+
+    private static void processMOMixins(List<String> mixins) {
+        ModCheck.matteroverdriveLoad();
+        if (MMNHUtilsConfig.isEnableMOAndroidNameFix()) mixins.add("matteroverdrive.EntityRougeAndroidMobMixin");
     }
 
 }

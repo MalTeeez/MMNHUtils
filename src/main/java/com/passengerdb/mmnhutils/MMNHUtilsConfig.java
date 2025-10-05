@@ -16,41 +16,42 @@ public class MMNHUtilsConfig {
             "If an entity \"is a\" type of one of the follow classes, it won't be set in spawner reprogrammer",
             "For example, \"net.minecraft.entity.boss.IBossDisplayData\", then all bosses can't be set for spawner in spawner reprogrammer" })
     @Config.DefaultStringList(value = { "net.minecraft.entity.boss.IBossDisplayData" })
-    private static String[] spawnerReprogrammerBlacklistEntityParent;
+    private static String[] spawnerReprogrammerBlacklistEntityParent = new String[] {
+        "net.minecraft.entity.boss.IBossDisplayData" };
 
     @Config.Comment("Whether or not to enable proxima structure bypass key calculation fix")
     @Config.DefaultBoolean(value = true)
-    private static boolean enableStructureBypassKeyCalculationFix;
+    private static boolean enableStructureBypassKeyCalculationFix = true;
 
     @Config.Comment("Whether or not to enable fixing Reika's damage armor method, prevent it to destroy some unbreakable armors")
     @Config.DefaultBoolean(value = true)
-    private static boolean enableDamageArmorItemFix;
+    private static boolean enableDamageArmorItemFix = true;
 
     @Config.Comment("Whether or not to disable M3 dungeon mob appears in non dungeon dimensions")
     @Config.DefaultBoolean(value = true)
-    private static boolean disableM3DungeonMobAppearsInNonDungeonDimension;
+    private static boolean disableM3DungeonMobAppearsInNonDungeonDimension = true;
 
     @Config.Comment("Change ChromatiCraft item collector's behavior of collecting item from EntityJoinWorldEvent. Set the item to dead and set stack size to 0 instead of cancel event.")
     @Config.DefaultBoolean(value = true)
-    private static boolean changeItemCollectorCollectItemFromEventBehavior;
+    private static boolean changeItemCollectorCollectItemFromEventBehavior = true;
 
     @Config.Comment("Disable ChromatiCraft's item mover interact with ISidedInventory container.")
     @Config.DefaultBoolean(value = true)
-    private static boolean disableItemMoverInteractWithISidedInventory;
+    private static boolean disableItemMoverInteractWithISidedInventory = true;
 
     @Config.Comment("Whether or not to enable fix of server crash when using bypass panel of shifting maze")
     @Config.DefaultBoolean(value = true)
-    private static boolean enableShiftMazeBypassCrashFix;
+    private static boolean enableShiftMazeBypassCrashFix = true;
 
     @Config.Comment(
         value = { "Whether or not to try to reload minetweaker script (at most 3 times) on server started",
             "This is used to try to fix hashing issue in Thermal Expansion recipes" })
     @Config.DefaultBoolean(value = true)
-    private static boolean tryReloadMTScriptOnServerStarted;
+    private static boolean tryReloadMTScriptOnServerStarted = true;
 
     @Config.Comment("Whether or not to enable fix matter override android's name will grow infinity during loading and saving name")
     @Config.DefaultBoolean(value = true)
-    private static boolean enableMOAndroidNameFix;
+    private static boolean enableMOAndroidNameFix = true;
 
     public static List<String> getSpawnerReprogrammerBlacklistEntityParent() {
         return Collections.unmodifiableList(Arrays.asList(spawnerReprogrammerBlacklistEntityParent));

@@ -10,8 +10,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import com.passengerdb.mmnhutils.MMNHUtilsConfig;
-
 import Reika.DragonAPI.Libraries.ReikaEntityHelper;
 
 @Mixin(value = ReikaEntityHelper.class, remap = false)
@@ -26,8 +24,6 @@ public class DamageArmorItemMixin {
         cancellable = true)
     private static void damageArmorItem(EntityLivingBase e, int slot, int amt,
         BiFunction<ItemStack, Integer, Integer> handle, CallbackInfoReturnable<Integer> cir) {
-        if (!MMNHUtilsConfig.isEnableDamageArmorItemFix()) return;
-
         ItemStack arm = e.getEquipmentInSlot(slot);
         if (!arm.isItemStackDamageable()) cir.setReturnValue(Integer.valueOf(0));
 
