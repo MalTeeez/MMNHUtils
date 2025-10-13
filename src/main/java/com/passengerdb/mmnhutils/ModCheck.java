@@ -9,6 +9,7 @@ public class ModCheck {
     private static boolean manametalmod = false;
     private static boolean minetweaker3 = false;
     private static boolean matteroverdrive = false;
+    private static boolean rotarycraft = false;
 
     public static void ccLoad() {
         chromaticraft = true;
@@ -48,6 +49,14 @@ public class ModCheck {
 
     public static boolean isMatteroverdriveLoaded() {
         return matteroverdrive;
+    }
+
+    public static void rotarycraftLoad() {
+        rotarycraft = true;
+    }
+
+    public static boolean isRotarycraftLoaded() {
+        return rotarycraft;
     }
 
 }

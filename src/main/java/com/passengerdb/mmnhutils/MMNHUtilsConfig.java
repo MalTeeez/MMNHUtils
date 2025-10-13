@@ -53,6 +53,10 @@ public class MMNHUtilsConfig {
     @Config.DefaultBoolean(value = true)
     private static boolean enableMOAndroidNameFix = true;
 
+    @Config.Comment("Whether or not to enable fix crash when disassemble rotarycraft's gearbox")
+    @Config.DefaultBoolean(value = true)
+    private static boolean enableGearboxDisassembleFix = true;
+
     public static List<String> getSpawnerReprogrammerBlacklistEntityParent() {
         return Collections.unmodifiableList(Arrays.asList(spawnerReprogrammerBlacklistEntityParent));
     }
@@ -87,6 +91,10 @@ public class MMNHUtilsConfig {
 
     public static boolean isEnableMOAndroidNameFix() {
         return enableMOAndroidNameFix;
+    }
+
+    public static boolean isEnableGearboxDisassembleFix() {
+        return enableGearboxDisassembleFix;
     }
 
 }

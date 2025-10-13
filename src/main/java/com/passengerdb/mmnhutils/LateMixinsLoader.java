@@ -45,6 +45,9 @@ public class LateMixinsLoader implements ILateMixinLoader {
         if (loadedMods.contains("mo")) {
             processMOMixins(mixins);
         }
+        if (loadedMods.contains("RotaryCraft")) {
+            processROCMixins(mixins);
+        }
 
         return mixins;
     }
@@ -69,6 +72,11 @@ public class LateMixinsLoader implements ILateMixinLoader {
     private static void processMOMixins(List<String> mixins) {
         ModCheck.matteroverdriveLoad();
         if (MMNHUtilsConfig.isEnableMOAndroidNameFix()) mixins.add("matteroverdrive.EntityRougeAndroidMobMixin");
+    }
+
+    private static void processROCMixins(List<String> mixins) {
+        ModCheck.rotarycraftLoad();
+        if (MMNHUtilsConfig.isEnableGearboxDisassembleFix()) mixins.add("rotarycraft.TileEntityWorktableMixin");
     }
 
 }
