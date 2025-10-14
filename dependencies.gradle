@@ -36,10 +36,12 @@
 dependencies {
     implementation("com.github.GTNewHorizons:GTNHLib:0.6.33:dev") { transitive = false }
 	
-	devOnlyNonPublishable(rfg.deobf("curse.maven:dragonapi-235591:4722480"))
-	devOnlyNonPublishable(rfg.deobf("curse.maven:chromaticraft-235590:4721192"))
-	devOnlyNonPublishable(rfg.deobf("curse.maven:manametalmod-531708:6943759"))
-	devOnlyNonPublishable(rfg.deobf("curse.maven:crafttweaker-239197:2838720"))
-	devOnlyNonPublishable(rfg.deobf("curse.maven:matteroverdrive-229694:2331162"))
-	devOnlyNonPublishable(rfg.deobf("curse.maven:rotarycraft-235596:4721191"))
+	compileOnly(rfg.deobf("curse.maven:dragonapi-235591:4722480"))
+	compileOnly(rfg.deobf("curse.maven:chromaticraft-235590:4721192"))
+	compileOnly(rfg.deobf("curse.maven:crafttweaker-239197:2838720"))
+	compileOnly(rfg.deobf("curse.maven:matteroverdrive-229694:2331162"))
+	compileOnly(rfg.deobf("curse.maven:rotarycraft-235596:4721191"))
+	
+	compileOnly(rfg.deobf("curse.maven:manametalmod-531708:6943759"))
+	//runtimeOnly("curse.maven:muya1-7-10-530214:4364097")
 }
